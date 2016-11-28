@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @media(min-width: 768px){
+  body {
+    overflow-x: hidden;
+  }
   .clear {
     clear: both;
   }
@@ -90,6 +93,7 @@
     position: relative;
     margin: 0 auto;
     margin-top: 180px;
+    margin-left: 10%;
     .data-berita {
       .title {
         padding-bottom: 10px;
@@ -125,11 +129,68 @@
                   color: #474644;
                   font-weight: 400;               
                 }
+                .read_more {
+                  text-decoration: none;
+                  color: #fff;
+                  font-family: bebas_neueregular, Helvetica, Arial;
+                  display: inline-block;
+                  background-color: #aeb1a0;
+                  padding: 8px 30px;
+                  font-size: 16px;
+                  letter-spacing: 1.5px;
+                  outline: none;
+                }
               }
             }
           }
         }
+        .carousel-control {
+          background-image: none;
+          position: absolute;
+          left: auto;
+          bottom: auto;
+          opacity: 1;
+          margin-top: 4.7em;
+          text-shadow: none;
+          span {
+            color: #aeb1a0;
+            transition: all .2s ease-in;
+            &:hover {
+              color: #640f0f;
+            }
+          }
+        }
+        .carousel-control.left {
+          left: -8em;
+        }
+        .carousel-control.right{
+          right: 7em;
+        } 
       }
     }
   }
+  .header_texture{
+    padding: 0px 5%;
+    padding-top: 7.5em;
+    .o-title-flex {
+      display: -webkit-flex;
+      display: flex;
+      position: relative;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0;
+      font-size: 6.875rem;
+    }
+    .-texture {
+      .c-char {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: url('glitch/txt_bg.jpg') center center no-repeat;
+        color: #aeb1a0;
+      }
+    }
+  }
+  
 }
