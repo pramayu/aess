@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get '/event', to: 'home#event', as: :home_event
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

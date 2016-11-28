@@ -1,0 +1,26 @@
+<div class="event container">
+  <div class="data-event">
+    <% @categories.each do |category| %>
+      <div class="col-md-3 event_">
+        <h4 class="_ev">
+          <a href="#" data-text="<%= category.name %>" class="name_">
+            <%= category.name %>
+          </a>
+        </h4>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="header_texture _texture">
+  <h1 class="o-title-flex -texture">
+    <span class="c-char">A</span>
+    <span class="c-char">L</span>
+    <span class="c-char">L</span>
+    <span class="c-char">.</span>
+    <span class="c-char">E</span>
+    <span class="c-char">V</span>
+    <span class="c-char">E</span>
+    <span class="c-char">N</span>
+    <span class="c-char">T</span>
+  </h1>
+</div>
