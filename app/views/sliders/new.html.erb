@@ -1,0 +1,16 @@
+<div class="contain">
+  <div class="top_tit">
+    <h2 class="title">Add New Slider</h2>
+  </div>
+  <div class="btn_jh">
+    <div class="idis">
+      <ul class="list-inline hdgwt">
+        <li><%= link_to new_slider_path do %><i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
+        <li><%#= link_to all_slider_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><%# end %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont_ii">
+    <%= render "sliders/form" %>
+  </div>
+</div>

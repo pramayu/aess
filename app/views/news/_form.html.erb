@@ -1,0 +1,11 @@
+<%= form_for @news do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control", placeholder: "Content" %>
+  </div>
+  <div class="btn_x">
+    <%= f.submit "Upload", class: "btn btn-primary" %>
+  </div>
+<% end %>

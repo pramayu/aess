@@ -1,0 +1,27 @@
+<div class="berita container">
+  <div class="data-berita">
+    <div class="title">
+      <h4>BERITA</h4>
+    </div>
+    <div class="content-berita">
+      <div id="berita" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <% @news.each_slice(3).with_index do |news, index| %>
+            <div class="item <%= 'active' if index == 0  %>">
+              <% news.each do |_news| %>
+                <div class="berita-satu col-md-3">
+                  <div class="title_berita">
+                    <h4 class="xcx"><%= _news.title %></h4>
+                  </div>
+                  <div class="nase">
+                    <p class="isp"><%= truncate(_news.content, length: 140) %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@media(min-width: 768px){
+  .clear {
+    clear: both;
+  }
+  .noise {
+    position: fixed;
+    background:#fff;
+    opacity: 0.15;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .why_always_me {
+    width: 100%;
+    height: 750px;
+    max-height: 750px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .gras {
+      // background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,1) 75%);
+      background: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,1) 75%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,1) 75%);
+      background: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,1) 75%);
+      .make_me_streess {
+        width: 100%;
+        height: 750px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('glitch/glitch-transition.gif');
+        opacity: .2;
+      }
+    }
+    .i_dont_know {
+      background-color: rgba(255,255,255,.3);
+      position: absolute;
+      width: 100%;
+      height: 750px;
+      top:0;
+      left:0;
+      right:0;
+      z-index: 10;
+    }
+  }
+  .footer {
+    position: absolute;
+    z-index:10;
+    left: 0;
+    right:0;
+    width: 100%;
+    margin-top: -35px;
+    .container-fluid {
+      .sosmed {
+        li {
+          cursor: pointer;
+          a {
+            font-size: 14px;
+            color: #b7baab;
+            text-decoration: none;
+            padding-left: 10px;
+          }
+          &:hover {
+            a {
+              color: #640f0f;
+            }
+          }
+        }
+      } 
+      .copyright {
+        list-style: none;
+        padding: 0px;
+        li {
+          font-family: 'Droid Serif', serif;
+          font-size: 13px;
+          color: #b7baab;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  
+  //berita
+  .berita {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 180px;
+    .data-berita {
+      .title {
+        padding-bottom: 10px;
+        h4 {
+          font-family:bebas_neuebold, Helvetica, Arial;
+          font-size: 30px;
+          color: #640f0f;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    .content-berita {
+      #berita {
+        .carousel-inner {
+          .item {
+            .berita-satu {
+              padding-left: 0px;
+              padding-right: 35px;
+              margin-right: 20px;
+              .title_berita {
+                h4 {
+                  font-family:bebas_neueregular, Helvetica, Arial;
+                  font-size: 18px;
+                  color: #640f0f;
+                  letter-spacing: 1px;
+                }
+              }
+              .nase {
+                .isp {
+                  font-family: 'Droid Serif', serif;
+                  font-size: 14px;
+                  line-height: 23px;
+                  color: #474644;
+                  font-weight: 400;               
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

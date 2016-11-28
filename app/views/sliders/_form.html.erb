@@ -1,0 +1,12 @@
+<%= form_for(@slider) do |f| %>
+  <div class="form-group">
+    <%= f.label :name%>
+    <%= f.text_field :name, class: "form-control", autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :slider, "Slider Image" %>
+    <%= f.file_field :slider %>
+  </div>
+  <%= f.submit "Upload", class: "btn btn-default" %>
+<% end %>

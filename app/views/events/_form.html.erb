@@ -1,0 +1,25 @@
+<%= form_for(@event) do |f|  %>
+  <div class="form-group">
+    <%= f.label :name  %>
+    <%= f.text_field :name, class: "form-control", autofocus: true  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :event_date  %>
+    <%= f.date_field :event_date, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.collection_select(:category_id, @categories, :id, :name, {prompt: "Choose category"}, {class: "form-control form_cate"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.fields_for :galleries do |gallery| %>
+      <%= render 'gallery_fields', f: gallery %>
+      <div class="links">
+        <%= link_to_add_association 'photo', f, :galleries %>
+      </div>
+    <% end %>
+  </div>
+  <%= f.submit "Upload", class: "btn btn-default"  %>
+<% end  %>

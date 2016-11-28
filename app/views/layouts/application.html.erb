@@ -3,12 +3,35 @@
 <head>
   <title>Aesss</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <canvas id="canvas" class="noise"></canvas>
+  <div class="why_always_me" style="background-image: url(<%= Slider.all.order('created_at desc').limit(1).map{ |slider| slider.slider }.join("") %>)">
+    <div class="gras">
+      <div class="make_me_streess"></div>
+    </div>
+    <div class="i_dont_know">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>    
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container-fluid">
+      <ul class="list-inline pull-right sosmed">
+        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+      <ul class="pull-left copyright">
+        <li>Copyright 2016 © Ruang Ide All rights reserved</li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </div>
 </body>
 </html>
