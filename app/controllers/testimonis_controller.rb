@@ -10,7 +10,7 @@ class TestimonisController < ApplicationController
   def create
     @testimoni = Testimoni.new(params_test)
     if @testimoni.save
-      redirect_to all_testimoni_path
+      redirect_to new_testimoni_path
     else 
       render 'new'
     end
@@ -22,7 +22,7 @@ class TestimonisController < ApplicationController
 
   def update
     if @testimoni.update(params_test)
-      redirect_to all_testimoni_path
+      redirect_to new_testimoni_path
     else
       render 'edit'
     end

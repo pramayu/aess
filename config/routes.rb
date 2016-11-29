@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/event', to: 'home#event', as: :home_event
+  get '/contact', to: 'home#contact', as: :home_contact
+  get '/about', to: 'home#about', as: :home_about
+  get '/client-says', to: 'home#testimonials', as: :home_testimo
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
