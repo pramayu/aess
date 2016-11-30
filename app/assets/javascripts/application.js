@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery.nicescroll.min.js
+//= require masonry/jquery.masonry
+//= require home.coffee
 //= require noise
 //= require aeess
 //= require cocoon

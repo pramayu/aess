@@ -11,25 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127090003) do
+ActiveRecord::Schema.define(version: 20161130064113) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 50
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "slug",       limit: 255
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.integer  "category_id", limit: 4
+    t.string   "name",       limit: 255
     t.datetime "event_date"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "user_id",    limit: 4
   end
 
-  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "galleries", force: :cascade do |t|
@@ -39,8 +37,10 @@ ActiveRecord::Schema.define(version: 20161127090003) do
     t.datetime "updated_at",                null: false
     t.text     "description", limit: 65535
     t.string   "name",        limit: 255
+    t.integer  "category_id", limit: 4
   end
 
+  add_index "galleries", ["category_id"], name: "index_galleries_on_category_id", using: :btree
   add_index "galleries", ["event_id"], name: "index_galleries_on_event_id", using: :btree
 
   create_table "news", force: :cascade do |t|
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20161127090003) do
     t.string   "remember_digest", limit: 255
   end
 
-  add_foreign_key "events", "categories"
   add_foreign_key "events", "users"
+  add_foreign_key "galleries", "categories"
   add_foreign_key "galleries", "events"
 end

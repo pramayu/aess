@@ -19,4 +19,8 @@ class HomeController < ApplicationController
     @testimonis = Testimoni.all.order('created_at desc')
   end
 
+  def gallery
+    @category = Category.find_by_slug!(params[:id])
+  end
+
 end

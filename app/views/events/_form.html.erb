@@ -10,10 +10,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.collection_select(:category_id, @categories, :id, :name, {prompt: "Choose category"}, {class: "form-control form_cate"}) %>
-  </div>
-
-  <div class="form-group">
     <%= f.fields_for :galleries do |gallery| %>
       <%= render 'gallery_fields', f: gallery %>
       <div class="links">

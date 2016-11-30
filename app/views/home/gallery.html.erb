@@ -1,0 +1,190 @@
+<div class="gallery container">
+  <div class="data-gallery">
+    <div id="gallery" class="carousel slide">
+      <div class="carousel-inner">
+        <% @category.galleries.each_slice(3).with_index do |gallery, index| %>
+          <div class="item <%= 'active' if index == 0 %>">
+            <% gallery.each do |f| %>
+              <div class="col-md-4 flor">
+                <div class="imf">
+                  <%= image_tag f.image_url(:thumb) %>
+                </div>
+                <div class="hover">
+                  <div class="hrw">
+                    <h4><%= f.name %></h4>
+                  </div>
+                  <div class="zom">
+                    <a href="#" class="xs" data-toggle="modal" data-target="#myModal_<%= f.id %>">READ MORE</a>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="nav_b">
+        <a class="left carousel-control" href="#gallery" role="button" data-slide="prev">
+          <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#gallery" role="button" data-slide="next">
+          <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="header_texture _texture">
+  <h1 class="o-title-flex -texture">
+    <% if @category.name == 'advertising' %>
+      <span class="c-char">A</span>
+      <span class="c-char">D</span>
+      <span class="c-char">V</span>
+      <span class="c-char">E</span>
+      <span class="c-char">R</span>
+      <span class="c-char">T</span>
+      <span class="c-char">I</span>
+      <span class="c-char">S</span>
+      <span class="c-char">I</span>
+      <span class="c-char">N</span>
+      <span class="c-char">G</span>
+    <% elsif @category.name == '3d design dan graphic' %>
+      <span class="c-char">3</span>
+      <span class="c-char">D</span>
+      <span class="c-char">.</span>
+      <span class="c-char">D</span>
+      <span class="c-char">E</span>
+      <span class="c-char">S</span>
+      <span class="c-char">I</span>
+      <span class="c-char">G</span>
+      <span class="c-char">N</span>
+      <span class="c-char">&amp;</span>
+      <span class="c-char">G</span>
+      <span class="c-char">R</span>
+      <span class="c-char">A</span>
+      <span class="c-char">P</span>
+      <span class="c-char">H</span>
+      <span class="c-char">I</span>
+      <span class="c-char">C</span>
+    <% elsif @category.name == 'audio visual' %>
+      <span class="c-char">A</span>
+      <span class="c-char">U</span>
+      <span class="c-char">D</span>
+      <span class="c-char">I</span>
+      <span class="c-char">O</span>
+      <span class="c-char">.</span>
+      <span class="c-char">V</span>
+      <span class="c-char">I</span>
+      <span class="c-char">S</span>
+      <span class="c-char">U</span>
+      <span class="c-char">A</span>
+      <span class="c-char">L</span>
+    <% elsif @category.name == 'corporate gathering' %>
+      <span class="c-char">C</span>
+      <span class="c-char">O</span>
+      <span class="c-char">R</span>
+      <span class="c-char">P</span>
+      <span class="c-char">O</span>
+      <span class="c-char">R</span>
+      <span class="c-char">A</span>
+      <span class="c-char">T</span>
+      <span class="c-char">E</span>
+      <span class="c-char">.</span>
+      <span class="c-char">G</span>
+      <span class="c-char">A</span>
+      <span class="c-char">T</span>
+      <span class="c-char">H</span>
+      <span class="c-char">E</span>
+      <span class="c-char">R</span>
+      <span class="c-char">I</span>
+      <span class="c-char">N</span>
+      <span class="c-char">G</span>
+    <% elsif @category.name == 'creative concept' %>
+      <span class="c-char">C</span>
+      <span class="c-char">R</span>
+      <span class="c-char">E</span>
+      <span class="c-char">A</span>
+      <span class="c-char">T</span>
+      <span class="c-char">I</span>
+      <span class="c-char">V</span>
+      <span class="c-char">E</span>
+      <span class="c-char">.</span>
+      <span class="c-char">C</span>
+      <span class="c-char">O</span>
+      <span class="c-char">N</span>
+      <span class="c-char">C</span>
+      <span class="c-char">E</span>
+      <span class="c-char">P</span>
+      <span class="c-char">T</span>
+    <% elsif @category.name == 'event equipment' %>
+      <span class="c-char">E</span>
+      <span class="c-char">V</span>
+      <span class="c-char">E</span>
+      <span class="c-char">N</span>
+      <span class="c-char">T</span>
+      <span class="c-char">.</span>
+      <span class="c-char">E</span>
+      <span class="c-char">Q</span>
+      <span class="c-char">U</span>
+      <span class="c-char">I</span>
+      <span class="c-char">P</span>
+      <span class="c-char">M</span>
+      <span class="c-char">E</span>
+      <span class="c-char">N</span>
+      <span class="c-char">T</span>
+    <% elsif @category.name == 'event organizer' %>
+      <span class="c-char">E</span>
+      <span class="c-char">V</span>
+      <span class="c-char">E</span>
+      <span class="c-char">N</span>
+      <span class="c-char">T</span>
+      <span class="c-char">.</span>
+      <span class="c-char">O</span>
+      <span class="c-char">R</span>
+      <span class="c-char">G</span>
+      <span class="c-char">A</span>
+      <span class="c-char">N</span>
+      <span class="c-char">I</span>
+      <span class="c-char">Z</span>
+      <span class="c-char">E</span>
+      <span class="c-char">R</span>
+    <% elsif @category.name == 'show management' %>
+      <span class="c-char">S</span>
+      <span class="c-char">H</span>
+      <span class="c-char">O</span>
+      <span class="c-char">W</span>
+      <span class="c-char">.</span>
+      <span class="c-char">M</span>
+      <span class="c-char">A</span>
+      <span class="c-char">N</span>
+      <span class="c-char">A</span>
+      <span class="c-char">G</span>
+      <span class="c-char">E</span>
+      <span class="c-char">M</span>
+      <span class="c-char">E</span>
+      <span class="c-char">N</span>
+      <span class="c-char">T</span>
+    <% end %>
+  </h1>
+</div>
+<% @category.galleries.each do |gallery| %>
+  <div class="modal fade mdl_gal" id="myModal_<%= gallery.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i></button>
+          <h4 class="modal-title" id="myModalLabel"><%= gallery.name %></h4>
+        </div>
+        <div class="modal-body" style="background-image: url(<%= gallery.image_url(:thumbo) %>)">
+          <div class="description">
+            <p class="ba_">
+            <span><%= gallery.description %></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact', as: :home_contact
   get '/about', to: 'home#about', as: :home_about
   get '/client-says', to: 'home#testimonials', as: :home_testimo
+  get '/event/:id', to: 'home#gallery', as: :category_event
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,9 +3,7 @@
     <% @categories.each do |category| %>
       <div class="col-md-3 event_">
         <h4 class="_ev">
-          <a href="#" data-text="<%= category.name %>" class="name_">
-            <%= category.name %>
-          </a>
+          <%= link_to "#{category.name}", category_event_url(category), class: "name_", "data-text": "#{category.name}", "data-turbolinks": false %>
         </h4>
       </div>
     <% end %>
