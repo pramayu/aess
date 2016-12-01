@@ -3,9 +3,11 @@ class SlidersController < ApplicationController
 
   
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_slider, only: [:edit, :update, :destroy]
 
   def new
     @slider = Slider.new
+    render layout: "admin"
   end
 
   def create
@@ -18,7 +20,7 @@ class SlidersController < ApplicationController
   end
 
   def edit
-
+    render layout: "admin"
   end
 
   def update
@@ -36,7 +38,7 @@ class SlidersController < ApplicationController
 
   def all_slider
     @sliders = Slider.all.order('created_at desc')
-    # render layout: "admin"
+    render layout: "admin"
   end
 
   private
