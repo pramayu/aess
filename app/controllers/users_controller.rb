@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
   before_action :get_user, only: [:edit, :update, :destroy, :edit_password]
-  before_action :signed_in_user, only: [ :edit, :update, :all_user, :destroy, :edit_password]
+  # before_action :signed_in_user, only: [ :edit, :update, :all_user, :destroy, :edit_password]
   # before_action :absolute_admin, only: [:new, :create, :destroy]
 
   def new
     @user = User.new
-    render layout: "admin"
+    # render layout: "admin"
   end
 
   def create
