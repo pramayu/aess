@@ -6,7 +6,7 @@
     <div class="idis">
       <ul class="list-inline hdgwt">
         <li><%= link_to new_testimoni_path do %><i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
-        <li><%#= link_to all_testimonial_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><%# end %></li>
+        <li><%= link_to all_testimoni_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><% end %></li>
       </ul>
     </div>
   </div>
@@ -14,3 +14,7 @@
     <%= render "testimonis/form" %>
   </div>
 </div>
+<script>
+$('.respond').removeClass("aktif");      
+$('.testimonial__').addClass('aktif');
+</script>

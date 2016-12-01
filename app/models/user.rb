@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+  mount_uploader :profile, ProfileUploader
   attr_accessor :remember_token, :reset_token
   before_save :email_downcase
 

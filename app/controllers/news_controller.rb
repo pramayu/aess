@@ -5,24 +5,25 @@ class NewsController < ApplicationController
 
   def new
     @news = News.new
+    render layout: "admin"
   end
 
   def create
     @news = News.new(params_news)
     if @news.save
-      redirect_to new_news_url
+      redirect_to all_news_url
     else
       render 'new'
     end
   end
 
   def edit
-
+    render layout: "admin"
   end
 
   def update
     if @news.update(params_news)
-      redirect_to new_news_url
+      redirect_to all_news_url
     else
       render 'edit'
     end
@@ -30,6 +31,12 @@ class NewsController < ApplicationController
 
   def destroy
     @news.destroy
+    redirect_to all_news_url
+  end
+
+  def all_news
+    @news = News.all.order('created_at desc')
+    render layout: "admin"
   end
 
   private

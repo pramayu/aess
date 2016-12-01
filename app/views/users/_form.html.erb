@@ -1,0 +1,28 @@
+<div class="login">
+  <div class="frame">
+    <h2 class="text-center title">RUANG IDE</h2>
+    <div class="ckdj">
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
+        </div>
+        <div class="form-group">
+          <%= f.email_field :email, class: "form-control", placeholder: "Email address" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password confirmation" %>
+        </div>
+        <div class="form-group">
+          <%= f.check_box :god_like %>
+          <%= f.label :god_like, "Absolute Admin" %>
+        </div>
+        <div class="btn_x">
+          <%= f.submit "Sign Up", class: "btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

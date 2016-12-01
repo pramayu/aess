@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201090342) do
+ActiveRecord::Schema.define(version: 20161201154202) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 50
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161201090342) do
     t.string   "reset_digest",    limit: 255
     t.datetime "reset_sent_at"
     t.string   "profile",         limit: 255
+    t.boolean  "god_like"
   end
 
   add_foreign_key "events", "users"

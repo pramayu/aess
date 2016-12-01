@@ -5,6 +5,7 @@ class TestimonisController < ApplicationController
 
   def new
     @testimoni = Testimoni.new
+    render layout: "admin"
   end
 
 
@@ -18,7 +19,7 @@ class TestimonisController < ApplicationController
   end
 
   def edit
-
+    render layout: "admin"
   end
 
   def update

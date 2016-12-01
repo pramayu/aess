@@ -1,0 +1,45 @@
+<div class="contain">
+  <div class="top_tit">
+    <h2 class="title">Update Account</h2>
+  </div>
+  <div class="btn_jh">
+    <div class="idis">
+      <ul class="list-inline hdgwt">
+        <% unless !current_user.god_like? %>
+          <li><%= link_to new_user_path do %><i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
+        <% end %>
+        <li><%= link_to all_user_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><% end %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont_ii">
+    <div class="login">
+      <div class="frame">
+        <h2 class="text-center title">RUANG IDE</h2>
+        <div class="ckdj">
+          <%= form_for(@user) do |f| %>
+            <div class="form-group">
+              <%= f.label :username %>
+              <%= f.text_field :username, class: "form-control", autofocus: true %>
+            </div>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :profile, "Profile Picture" %>
+              <%= f.file_field :profile %>
+            </div>
+            <br><br>
+            <%= f.submit "Update", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+$('.respond').removeClass("aktif");      
+$('.dashboard__').addClass('aktif');
+</script>

@@ -26,8 +26,10 @@ Rails.application.routes.draw do
   get 'admin/dashboard', to: 'admins#dashboard', as: :dashboard
   get 'admin/events', to: 'events#all_event', as: :all_event
   get 'admin/sliders', to: 'sliders#all_slider', as: :all_slider
-  get 'admin/testimonials', to: 'testimonials#all_testimonial', as: :all_testimonial
+  get 'admin/testimonials', to: 'testimonis#all_testimoni', as: :all_testimoni
   get 'admin/users/', to: 'users#all_user', as: :all_user
+  get 'admin/announcements/', to: 'news#all_news', as: :all_news
+  get 'admin/users/change-password/:id', to: 'users#edit_password', as: :edit_password
   delete '/events/:event_id/galleries/:id', to: 'galleries#delt', as: :delete_gallery
   root 'home#index'
 

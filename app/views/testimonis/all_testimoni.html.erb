@@ -1,0 +1,43 @@
+<div class="contain">
+  <div class="top_tit">
+    <h2 class="title">All Testimonial</h2>
+  </div>
+  <div class="btn_jh">
+    <div class="idis">
+      <ul class="list-inline hdgwt">
+        <li><%= link_to new_testimoni_path do %><i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
+        <li><%= link_to all_testimoni_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><% end %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont_ii">
+    <div class="testimonaial edbsg" style="width: 100%;">
+      <div class="leyr titl">
+        <p class="hsy">all the testimonial that have been added <span class="pull-right hgdr"><%= @tests.count %></span></p>
+      </div>
+      <div class="dhjwt">
+        <ul class="cbdq">
+          <% @tests.each_with_index do |test, index| %>
+            <li class="ang <%= 'cvdg' if (index + 1)%2 == 0 %>">
+              <ul class="list-inline najhs">
+                <li class="name_" style="width: 200px !important;"><%= truncate(test.name, length: 19) %></li>
+                <li class="user_ content_" style="width: 570px !important"><%= truncate(test.content, length: 90) %></li>
+                <li class="created_at_"  style="width: 135px !important; border-right: 1px solid #e7ebf1 !important;"><%= test.created_at.strftime("%d %B %Y") %></li>
+                <li class="actions_">
+                  <ul class="list-inline ahster">
+                    <li><%= link_to edit_testimoni_path(test) do %><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %></li>
+                    <li><%= link_to test, method: :delete do %><i class="fa fa-trash-o" aria-hidden="true"></i><% end %></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$('.respond').removeClass("aktif");      
+$('.testimonial__').addClass('aktif');
+</script>

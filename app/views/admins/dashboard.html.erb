@@ -39,6 +39,24 @@
         </ul>
       </div>
     </div>
+    <div class="testimonaial edbsg">
+      <div class="leyr titl">
+        <p class="hsy">all the announcement  have been added <span class="pull-right hgdr"><%= @news.count %></span></p>
+      </div>
+      <div class="dhjwt">
+        <ul class="cbdq">
+          <% @news.each_with_index do |test, index| %>
+            <li class="ang <%= 'cvdg' if (index + 1)%2 == 0 %>">
+              <ul class="list-inline najhs">
+                <li class="name_"><%= truncate(test.title, length: 19) %></li>
+                <li class="user_ content_"><%= truncate(test.content, length: 29) %></li>
+                <li class="created_at_"><%= test.created_at.strftime("%d %B %Y") %></li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
     <div class="sliders edbsg">
        <div class="leyr titl">
         <p class="hsy">all the testimonial that have been added <span class="pull-right hgdr"><%= @sliders.count %></span></p>

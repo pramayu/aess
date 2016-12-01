@@ -6,5 +6,6 @@ class AdminsController < ApplicationController
     @events = Event.all.order('created_at desc').limit(10)
     @tests = Testimoni.all.order('created_at desc').limit(6)
     @sliders = Slider.all.order('created_at desc')
+    @news = News.all.order('created_at desc').limit(6)
   end
 end
