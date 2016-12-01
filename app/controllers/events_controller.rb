@@ -2,20 +2,20 @@ class EventsController < ApplicationController
 
   
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :show]
 
 
   def new
     @event = current_user.events.build
     @categories = Category.all.order("name")
     @event.galleries.build
-    # render layout: "admin"
+    render layout: "admin"
   end
 
   def create
     @event = current_user.events.build(params_event)
     if @event.save
-      redirect_to new_event_url
+      redirect_to all_event_url
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class EventsController < ApplicationController
 
   def edit
     @categories = Category.all.order("name")
-    # render layout: "admin"
+    render layout: "admin"
   end
 
   def update
@@ -36,8 +36,18 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to new_event_path
+    redirect_to all_event_url
   end
+
+  def all_event
+    @events = Event.all.order('created_at desc')
+    render layout: "admin"
+  end
+
+  def show
+    render layout: "admin"
+  end
+
 
   private
 

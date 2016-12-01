@@ -1,0 +1,39 @@
+<div class="contain">
+  <div class="top_tit">
+    <h2 class="title"><%= @event.name %></h2>
+  </div>
+  <div class="btn_jh">
+    <div class="idis">
+      <ul class="list-inline hdgwt">
+        <li><%= link_to new_event_path do %><i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
+        <li><%= link_to all_event_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><% end %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont_ii">
+    <div class="cont_ii">
+      <div class="row dashgy">
+        <% @event.galleries.each do |gallery| %>
+          <div class="col-xs-6 col-md-3" id="gale_<%= gallery.id %>">
+            <a class="thumbnail">
+              <%= image_tag gallery.image_url(:thumb) %>
+            </a>
+            <div class="dagsjh">
+              <ul class="list-inline lsj" style="padding-top: 27%;">
+                <li><%= link_to delete_gallery_url(@event, gallery), method: :delete, class: "destroy" do %> <i class="fa fa-trash-o" aria-hidden="true"></i><% end %></li>
+              </ul>
+            </div>
+            <div class="caption">
+              <h3 title="<%= gallery.name %>"><%= truncate(gallery.name, length: 20) %></h3>
+            </div>
+          </div>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$('.respond').removeClass("aktif");      
+$('.event__').addClass('aktif');
+</script>

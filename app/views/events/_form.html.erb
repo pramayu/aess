@@ -13,7 +13,7 @@
     <%= f.fields_for :galleries do |gallery| %>
       <%= render 'gallery_fields', f: gallery %>
       <div class="links">
-        <%= link_to_add_association 'photo', f, :galleries %>
+        <%= link_to_add_association 'Add Field', f, :galleries %>
       </div>
     <% end %>
   </div>

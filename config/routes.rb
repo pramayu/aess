@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'admin/sliders', to: 'sliders#all_slider', as: :all_slider
   get 'admin/testimonials', to: 'testimonials#all_testimonial', as: :all_testimonial
   get 'admin/users/', to: 'users#all_user', as: :all_user
+  delete '/events/:event_id/galleries/:id', to: 'galleries#delt', as: :delete_gallery
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
