@@ -1,0 +1,58 @@
+<div class="contain">
+  <div class="top_tit">
+   <h2 class="title">Dashboard</h2>
+  </div>
+  <div class="cont_ii">
+    <div class="event_ edbsg">
+      <div class="titl">
+        <p class="hsy">all the events that have been added <span class="pull-right hgdr"><%= @events.count %></span></p>
+      </div>
+      <div class="dhjwt">
+        <ul class="cbdq">
+          <% @events.each_with_index do |event, index| %>
+            <li class="ang <%= 'cvdg' if (index + 1)%2 == 0 %>">
+              <ul class="list-inline najhs">
+                <li class="name_"><%= event.name %></li>
+                <li class="user_"><%= event.user.username %></li>
+                <li class="created_at_"><%= event.created_at.strftime("%d %B %Y") %></li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="testimonaial edbsg">
+      <div class="leyr titl">
+        <p class="hsy">all the testimonial that have been added <span class="pull-right hgdr"><%= @tests.count %></span></p>
+      </div>
+      <div class="dhjwt">
+        <ul class="cbdq">
+          <% @tests.each_with_index do |test, index| %>
+            <li class="ang <%= 'cvdg' if (index + 1)%2 == 0 %>">
+              <ul class="list-inline najhs">
+                <li class="name_"><%= truncate(test.name, length: 19) %></li>
+                <li class="user_ content_"><%= truncate(test.content, length: 29) %></li>
+                <li class="created_at_"><%= test.created_at.strftime("%d %B %Y") %></li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="sliders edbsg">
+       <div class="leyr titl">
+        <p class="hsy">all the testimonial that have been added <span class="pull-right hgdr"><%= @sliders.count %></span></p>
+      </div>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <% @sliders.each_with_index do |slider, index| %>
+            <div class="item <%= 'active' if index == 0 %>">
+            <%= image_tag slider.slider_url(:thumbso) %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

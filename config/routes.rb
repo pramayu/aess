@@ -23,6 +23,11 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about', as: :home_about
   get '/client-says', to: 'home#testimonials', as: :home_testimo
   get '/event/:id', to: 'home#gallery', as: :category_event
+  get 'admin/dashboard', to: 'admins#dashboard', as: :dashboard
+  get 'admin/events', to: 'events#all_event', as: :all_event
+  get 'admin/sliders', to: 'sliders#all_slider', as: :all_slider
+  get 'admin/testimonials', to: 'testimonials#all_testimonial', as: :all_testimonial
+  get 'admin/users/', to: 'users#all_user', as: :all_user
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
