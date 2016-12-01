@@ -2,12 +2,18 @@ Rails.application.routes.draw do
 
 
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   resources :users
   resources :categories
   resources :events
   resources :testimonis
   resources :sliders
   resources :news
+  resources :contacts, only: [:new, :create]
+  resources :password_resets, only: [:new, :create, :update, :edit]
   get  '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

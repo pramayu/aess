@@ -1,3 +1,4 @@
+<%= title "Contact Us" %>
 <style>
 .gras {
       background: -webkit-linear-gradient(right, rgba(255,255,255,0.2), rgba(255,255,255,1) 40%) !important;
@@ -11,23 +12,26 @@
     <div class="col-md-4 left">
       <h4 class="nb">Hubungi kami</h4>
       <div class="contact-form">
-        <form action="#">
+        <%= form_for @contact do |f| %>
           <div class="form-group">
-            <input type="text" class="form-control frm_" placeholder="Name">
+            <%= f.text_field :name, class: "form-control frm_", placeholder: "Name" %>
           </div>
           <div class="form-group">
-            <input type="email" class="form-control frm_" placeholder="Email">
+            <%= f.email_field :email, class: "form-control frm_", placeholder: "Email" %>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control frm_" placeholder="Phone">
+            <%= f.text_field :phone, class: "form-control frm_", placeholder: "Phone" %>
           </div>
           <div class="form-group">
-            <textarea id="" name="" cols="30" rows="10" class="form-control frm_ txt_area" placeholder="Message"></textarea>
+            <%= f.text_area :message, class: "form-control frm_ txt_area", placeholder: "Message" %>
+          </div>
+          <div class="form-group hidden">
+            <%= f.text_field :nickname, class: "form-control frm_", hint: "leave this field blank" %>
           </div>
           <div class="btn_send">
-            <button class="btn_snd">SEND</button>
+            <%= f.submit "SEND", class: "btn_snd" %>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
     <div class="col-md-8 right">

@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   
   before_action :set_news, only: [:update, :edit, :destroy]
+  before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @news = News.new

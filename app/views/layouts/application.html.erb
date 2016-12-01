@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aesss</title>
+  <title>
+    <%= if content_for?(:title) then yield(:title) end %>
+    ~ Ruang Ide
+  </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet">
@@ -16,6 +19,28 @@
     </div>
     <div class="i_dont_know">
       <div class="container-fluid">
+        <button class="menu_bar" id="mnu_bar">
+          <div class="c-har">
+            <div class="ch-h -right"></div>
+            <div class="ch-h -left"></div>
+            <span class="bar-top"></span>
+            <span class="bar-middle"></span>
+            <span class="bar-bottom"></span>
+          </div>
+        </button>
+        <div class="nav_slide">
+          <div class="first_nav">
+            <div class="container">
+              <ul class="rise-up">
+                <li class="home_"><a href="/" data-turbolinks="false"><span>HOME</span></a></li>
+                <li class="ttk_"><a href="/about" data-turbolinks="false"><span>TENTANG KAMI</span></a></li>
+                <li class="event_"><a href="/event" data-turbolinks="false"><span>EVENT</span></a></li>
+                <li class="testimn_"><a href="/client-says" data-turbolinks="false"><span>TESTIMONIAL</span></a></li>
+                <li class="contact_"><a href="/contact" data-turbolinks="false"><span>CONTACT</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <%= yield %>
       </div>    
     </div>

@@ -15,6 +15,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'friendly_id'
 gem 'masonry-rails'
+gem 'mail_form'
 gem "cocoon"
 gem 'bcrypt', '~> 3.1.7'
 

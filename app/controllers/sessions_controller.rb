@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to new_category_path
+      redirect_to root_path, success: "Login Success"
     else
-      render 'new'
+      redirect_to login_path, danger: "Invalid Email or Password"
     end
   end
 
