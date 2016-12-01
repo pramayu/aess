@@ -1,1 +1,20 @@
-<%= render 'categories/form' %>
+<div class="contain">
+  <div class="top_tit">
+    <h2 class="title">Edit  Category</h2>
+  </div>
+  <div class="btn_jh">
+    <div class="idis">
+      <ul class="list-inline hdgwt">
+        <li><%= link_to new_category_path do %><i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
+        <li><%= link_to all_category_url do %><i class="fa fa-folder-open" aria-hidden="true"></i><% end %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont_ii">
+    <%= render 'categories/form' %>
+  </div>
+</div>
+<script>
+$('.respond').removeClass("aktif");      
+$('.category__').addClass('aktif');
+</script>

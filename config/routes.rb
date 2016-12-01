@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'admin/users/', to: 'users#all_user', as: :all_user
   get 'admin/announcements/', to: 'news#all_news', as: :all_news
   get 'admin/users/change-password/:id', to: 'users#edit_password', as: :edit_password
+  get 'admin/categories', to: 'categories#all_category', as: :all_category
   delete '/events/:event_id/galleries/:id', to: 'galleries#delt', as: :delete_gallery
   root 'home#index'
 
