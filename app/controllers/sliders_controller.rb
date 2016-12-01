@@ -13,7 +13,7 @@ class SlidersController < ApplicationController
   def create
     @slider = Slider.new(params_slider)
     if @slider.save
-      redirect_to new_slider_path
+      redirect_to all_slider_path
     else
       render 'new'
     end
