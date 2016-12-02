@@ -18,6 +18,7 @@ gem 'masonry-rails'
 gem 'mail_form'
 gem "cocoon"
 gem 'bcrypt', '~> 3.1.7'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug'
