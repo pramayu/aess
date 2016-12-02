@@ -71,8 +71,8 @@ Rails.application.configure do
     domain: "google.com",
     authentication: :plain,
     enable_starttls_auto: true,
-    user_name: "dmonmad@gmail.com",
-    password: "pramayu10",
+    user_name: "ruangide.yk@gmail.com",
+    password: "xxxideliarxxx",
     openssl_verify_mode: 'none'
   }
   host = '144.217.15.153'
