@@ -178,10 +178,14 @@
           <h4 class="modal-title" id="myModalLabel"><%= gallery.name %></h4>
         </div>
         <div class="modal-body" style="background-image: url(<%= gallery.image_url(:thumbo) %>)">
-          <div class="description">
-            <p class="ba_">
-            <span><%= gallery.description %></span>
-            </p>
+        </div>
+        <div class="modal-footer">
+          <div class="container">
+            <div class="description">
+              <p class="ba_">
+              <span><%= gallery.description %></span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
