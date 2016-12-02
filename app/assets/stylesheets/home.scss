@@ -1021,6 +1021,12 @@
   }
   .berita-dialog {
     width: 41%;
-    height: auto;
+    height: auto !important;
+    .modal-content {
+      .modal-body {
+        min-height: 320px;
+        height: 340px;
+      }
+    }
   }
 }
