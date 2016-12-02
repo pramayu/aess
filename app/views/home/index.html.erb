@@ -15,7 +15,7 @@
                   </div>
                   <div class="nase">
                     <p class="isp"><%= truncate(_news.content, length: 140) %></p>
-                    <a href="#" class="read_more">READ MORE</a>
+                    <a href="#" data-toggle="modal" class="read_more" data-target="#berita_<%= _news.id %>">READ MORE</a>
                   </div>
                 </div>
               <% end %>
@@ -48,3 +48,22 @@
     <span class="c-char">E</span>
   </h1>
 </div>
+<% @news.each do |berita| %>
+  <div class="modal fade mdl_gal" id="berita_<%= berita.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i></button>
+          <h4 class="modal-title" id="myModalLabel"><%= berita.title %></h4>
+        </div>
+        <div class="modal-body">
+          <div class="description">
+            <p class="ba_">
+            <span><%= berita.content %></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
