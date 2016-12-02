@@ -720,7 +720,7 @@
     margin-top: 180px;
     .slider {
       position: relative;
-      z-index: 200;
+      // z-index: 8;
       width: 100%;
       margin: 0 auto;
       -webkit-user-select: none;
@@ -733,7 +733,7 @@
 	  padding-bottom: 40px;
 	.slide__mover{
 	  position: relative;
-	  z-index: 100;
+	  z-index: 8;
 	  .zoomer {
 	    .preview {
 	      .left_ {
@@ -781,14 +781,14 @@
       }
       .slide--current {
 	position: relative;
-	z-index: 100;
+	// z-index: 8;
 	visibility: visible;
 	opacity: 1;
       }
       .slider__nav {
 	position: absolute;
 	top: 0;
-	z-index: 101;
+	// z-index: 8;
 	width: 100%;
 	text-align: right;
 	.button {
