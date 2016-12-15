@@ -26,7 +26,7 @@
             </a>
             <div class="dagsjh" style="height: 236px;">
               <ul class="list-inline lsj" style="padding-top: 100px;">
-                <% unless !current_user.status? %>
+                <% unless !current_user.god_like? %>
                   <li><%= link_to user, method: :delete, class: "destroy" do %><i class="fa fa-trash-o" aria-hidden="true"></i><% end %></li>
                 <% end %>
               </ul>
