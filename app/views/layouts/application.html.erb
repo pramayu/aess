@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <canvas id="canvas" class="noise"></canvas>
+  <canvas id="canvas" class="noise saya-noise"></canvas>
   <div class="why_always_me" style="background-image: url(<%= Slider.all.order('created_at desc').limit(1).map{ |slider| slider.slider }.join("") %>)">
     <div class="gras">
       <div class="make_me_streess"></div>
@@ -30,6 +30,7 @@
         </button>
         <div class="nav_slide">
           <div class="first_nav">
+            <canvas id="canvas" class="noise saya-noise"></canvas>
             <div class="container">
               <ul class="rise-up">
                 <li class="home_"><a href="/" data-turbolinks="false"><span>RUANG IDE</span></a></li>
