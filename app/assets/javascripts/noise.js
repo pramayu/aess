@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var canvas = document.getElementsByClassName('saya-noise'),
+  var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d');
 
   function resize() {
